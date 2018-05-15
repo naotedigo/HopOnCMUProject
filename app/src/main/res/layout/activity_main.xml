@@ -1,33 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context="pt.ulisboa.tecnico.cmov.hoponcmuproject.MainActivity">
 
-    <android.support.design.widget.AppBarLayout
+
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="140dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="60dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
-    </android.support.design.widget.AppBarLayout>
+        <Button
+            android:id="@+id/monList_btn"
+            android:layout_width="140dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="64dp"
+            android:onClick="listMonumentsBtnClicked"
+            android:text="List Monuments"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/spinner" />
 
-    <include layout="@layout/content_main" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        <Button
+            android:id="@+id/quizes_btn"
+            android:layout_width="140dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="64dp"
+            android:text="Quizes"
+            android:onClick="QuizBtnClicked"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/monList_btn" />
 
-</android.support.design.widget.CoordinatorLayout>
+        <Button
+            android:id="@+id/score_btn"
+            android:layout_width="140dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="64dp"
+            android:onClick="scoreBtnClicked"
+            android:text="Score"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/quizes_btn"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <Button
+            android:id="@+id/logout_btn"
+            android:layout_width="140dp"
+            android:layout_height="51dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="60dp"
+            android:text="Log Out"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/score_btn"
+            />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
+

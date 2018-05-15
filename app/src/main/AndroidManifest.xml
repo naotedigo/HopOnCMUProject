@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pt.ulisboa.tecnico.cmov.hoponcmuproject">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".HopOnCMUApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -10,15 +13,28 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:name=".LoginActivity"
+            android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".SignUpActivity" />
+        <activity android:name=".MonumentActivity" />
+        <activity android:name=".ScoreActivity" />
+
+        <service
+            android:name=".HopOnService"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".QuestionsActivity" />
     </application>
 
 </manifest>
